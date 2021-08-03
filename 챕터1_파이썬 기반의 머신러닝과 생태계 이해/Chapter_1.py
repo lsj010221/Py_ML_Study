@@ -1,16 +1,7 @@
 import numpy as np
 
-arr = np.arange(5)
-print(arr)
-arr = np.arange(3,8)
-print(arr)
-arr = np.arange(0,9,2)
-print(arr)
-arr = np.arange(3,dtype='float64')
-print(arr)
-
-arr = np.zeros((5,))
-print(arr)
-
-arr = np.ones((2,2))
-print(arr)
+arr = np.array([[0,1,2],[3,4,5],[6,7,8]])
+print(arr,'\n')
+print(arr[:,:],'\n')
+print(arr[:2,1:3],'\n')
+print(arr[:,1])
