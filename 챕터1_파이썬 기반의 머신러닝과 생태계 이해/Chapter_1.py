@@ -1,7 +1,8 @@
 import numpy as np
 
-arr = np.array([[0,1,2],[3,4,5],[6,7,8]])
-print(arr,'\n')
-print(arr[:,:],'\n')
-print(arr[:2,1:3],'\n')
-print(arr[:,1])
+arr = np.array([3,1,4,1,5,9,2])
+print(arr)
+print(np.sort(arr))
+print(arr)
+print(arr.sort())
+print(arr)

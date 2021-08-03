@@ -46,7 +46,7 @@ import numpy as np
 
 numpy 대신 약어 np로 사용하는 것이 관례
 
-### np.array()
+### numpy.array()
 
 ```python
 import numpy as np
@@ -61,7 +61,7 @@ print(arr1)
 
 python의 리스트 등을 ndarray로 변환
 
-### np.ndim() np.shape()
+### ndarray.ndim ndarray.shape
 
 ```python
 import numpy as np
@@ -95,7 +95,7 @@ np.ndim() : ndarray의 차원 return
 
 np.shape() : ndarray의 차원과 크기를 tuple로 return
 
-### np.dtype() np.astype()
+### ndarray.dtype ndarray.astype()
 
 ```python
 import numpy as np
@@ -177,7 +177,7 @@ np.zeros() : 0으로 초기화된 ndarray return
 
 np.ones() : 1로 초기화된 ndarray return
 
-### np.reshape()
+### ndarray.reshape()
 
 ```python
 import numpy as np
@@ -272,22 +272,88 @@ print(arr[:,1])
 [1 4 7]
 ```
 
+Fancy Indexing과 달리 연속된 범위의 데이터 추출
+
 #### Fancy Indexing
 
 ```python
+import numpy as np
 
+arr = np.array([[0,1,2],[3,4,5],[6,7,8]])
+print(arr,'\n')
+print(arr[[0,2],:],'\n')
+print(arr[2,[0,2]],'\n')
+print(arr[:,[0,2]],'\n')
+print(arr[[0,2]])
 ```
 
 ```
+[[0 1 2]
+ [3 4 5]
+ [6 7 8]] 
 
+[[0 1 2]
+ [6 7 8]]
+
+[6 8]
+
+[[0 2]
+ [3 5]
+ [6 8]]
+
+[[0 1 2]
+ [6 7 8]]
 ```
+
+Slicing과 달리 입력한 인덱스의 데이터만 추출
 
 #### Boolean Indexing
 
 ```python
+import numpy as np
 
+arr = np.array([3,1,4,1,5,9,2])
+print(arr)
+print(arr<5)
+print(arr[arr<5])
+print(arr[[False, True, False, True, False, False, False]])
 ```
 
 ```
+[3 1 4 1 5 9 2]
+[ True  True  True  True False False  True]
+[3 1 4 1 2]
+[1 1]
+```
+
+### numpy.sort() ndarray.sort()
+
+```python
+import numpy as np
+
+arr = np.array([3,1,4,1,5,9,2])
+print(arr)
+print(np.sort(arr))
+print(arr)
+print(arr.sort())
+print(arr)
+```
 
 ```
+[3 1 4 1 5 9 2]
+[1 1 2 3 4 5 9]
+[3 1 4 1 5 9 2]
+None
+[1 1 2 3 4 5 9]
+```
+
+np.sort(ndarray)의 경우 원본을 유지하고 새로운 ndarray return
+
+ndarray.sort()의 경우 return이 없으며 원본 자체를 sort
+
+--------------------
+sort 오름/내림차순 및 정렬행렬 인덱스 반환
+
+내적 전치
+
+pandas & dataframe 미완...
