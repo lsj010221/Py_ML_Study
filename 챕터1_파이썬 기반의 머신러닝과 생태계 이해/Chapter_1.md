@@ -55,7 +55,7 @@ arr1 =  np.array([1,2,3])
 print(arr1)
 ```
 
-```markdown
+```
 [1 2 3]
 ```
 
@@ -77,7 +77,7 @@ print(arr.ndim)
 print(arr.shape)
 ```
 
-```nan
+```
 [1 2 3]
 1
 (3,)
@@ -172,7 +172,7 @@ print(arr)
 ```
 
 np.arange() : 연속적인 값을 가진 ndarray return
- 
+
 np.zeros() : 0으로 초기화된 ndarray return
 
 np.ones() : 1로 초기화된 ndarray return
@@ -188,6 +188,9 @@ print(arr.shape)
 arr = arr.reshape((3,2))
 print(arr)
 print(arr.shape)
+arr = arr.reshape((2,-1))
+print(arr)
+print(arr.shape)
 ```
 
 ```
@@ -198,5 +201,93 @@ print(arr.shape)
  [3 4]
  [5 6]]
 (3, 2)
+[[1 2 3]
+ [4 5 6]]
+(2, 3)
 ```
 
+ndarray의 차원을 변환
+
+인자로 -1 입력 시 호환될 수 있도록 자동 지정
+
+단, 지정된 사이즈로 변경이 불가능하면 오류 발생
+
+ex) (4,5) to (3,7) makes error
+
+ex) (5,6) to (-1,8) makes error
+
+### Indexing
+
+#### Single Value
+
+```python
+import numpy as np
+
+arr = np.arange(10)
+print(arr)
+print(arr[7])
+print(arr[-3])
+arr = np.array([[1,2,3],[4,5,6]])
+print(arr)
+print(arr[0][1])
+```
+
+```
+[0 1 2 3 4 5 6 7 8 9]
+7
+7
+[[1 2 3]
+ [4 5 6]]
+2
+```
+
+원하는 위치의 인덱스 값 지정하여 접근
+
+인덱스 값을 음수로 지정할 경우 맨 뒤에서부터 순차적으로 접근
+
+#### Slicing
+
+```python
+import numpy as np
+
+arr = np.array([[0,1,2],[3,4,5],[6,7,8]])
+print(arr,'\n')
+print(arr[:,:],'\n')
+print(arr[:2,1:3],'\n')
+print(arr[:,1])
+```
+
+```
+[[0 1 2]
+ [3 4 5]
+ [6 7 8]] 
+
+[[0 1 2]
+ [3 4 5]
+ [6 7 8]]
+
+[[1 2]
+ [4 5]]
+
+[1 4 7]
+```
+
+#### Fancy Indexing
+
+```python
+
+```
+
+```
+
+```
+
+#### Boolean Indexing
+
+```python
+
+```
+
+```
+
+```
