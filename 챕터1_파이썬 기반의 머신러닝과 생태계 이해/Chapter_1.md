@@ -1,5 +1,14 @@
 # 파이썬 기반의 머신러닝과 생태계 이해
 
+## 목차
+
+- [머신러닝의 분류](#머신러닝의-분류)
+- [개발 환경 세팅](#개발-환경-세팅)
+- [Numpy](#numpy)
+  - [import](#import)
+  - [numpy.array()](#numpyarray)
+
+
 ## 머신러닝의 분류
 
 - 지도학습 (Supervised Learning)
