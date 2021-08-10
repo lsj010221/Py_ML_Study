@@ -373,7 +373,51 @@ print(iris_scaled_df)
 데이터의 피처 각각이 0부터 1, 또는 -1부터 1 사이의 값으로 변환
 
 ```python
+from sklearn.datasets import load_iris
+from sklearn.preprocessing import MinMaxScaler
+import pandas as pd
 
+iris = load_iris()
+iris_data = iris.data
+iris_label = iris.target
+iris_df = pd.DataFrame(data=iris_data, columns=iris.feature_names)
+
+scaler = MinMaxScaler()
+scaler.fit(iris_df)
+iris_scaled = scaler.transform(iris_df)
+iris_scaled_df = pd.DataFrame(data=iris_scaled, columns=iris.feature_names)
+
+print(iris_df)
+print(iris_scaled_df)
 ```
 
+```
+     sepal length (cm)  sepal width (cm)  petal length (cm)  petal width (cm)
+0                  5.1               3.5                1.4               0.2
+1                  4.9               3.0                1.4               0.2
+2                  4.7               3.2                1.3               0.2
+3                  4.6               3.1                1.5               0.2
+4                  5.0               3.6                1.4               0.2
+..                 ...               ...                ...               ...
+145                6.7               3.0                5.2               2.3
+146                6.3               2.5                5.0               1.9
+147                6.5               3.0                5.2               2.0
+148                6.2               3.4                5.4               2.3
+149                5.9               3.0                5.1               1.8
+
+[150 rows x 4 columns]
+     sepal length (cm)  sepal width (cm)  petal length (cm)  petal width (cm)
+0             0.222222          0.625000           0.067797          0.041667
+1             0.166667          0.416667           0.067797          0.041667
+2             0.111111          0.500000           0.050847          0.041667
+3             0.083333          0.458333           0.084746          0.041667
+4             0.194444          0.666667           0.067797          0.041667
+..                 ...               ...                ...               ...
+145           0.666667          0.416667           0.711864          0.916667
+146           0.555556          0.208333           0.677966          0.750000
+147           0.611111          0.416667           0.711864          0.791667
+148           0.527778          0.583333           0.745763          0.916667
+149           0.444444          0.416667           0.694915          0.708333
+
+[150 rows x 4 columns]
 ```
